@@ -36,6 +36,13 @@ generate = [
     "Gsk.TextureNode",
     "Gsk.TransformCategory",
     "Gsk.TransformNode",
+    "Gsk.GLShaderNode",
+    "Gsk.LinearGradientNode",
+    "Gsk.RadialGradientNode",
+    "Gsk.RepeatingLinearGradientNode",
+    "Gsk.RepeatingRadialGradientNode",
+    "Gsk.ConicGradientNode",
+    "Gsk.ContainerNode",
 ]
 
 manual = [
@@ -95,20 +102,6 @@ status = "generate"
 cfg_condition = "feature = \"broadway\""
 
 [[object]]
-name = "Gsk.ConicGradientNode"
-status = "generate"
-    [[object.function]]
-    name = "new"
-    manual = true
-
-[[object]]
-name = "Gsk.ContainerNode"
-status = "generate"
-    [[object.function]]
-    name = "new"
-    manual = true
-
-[[object]]
 name = "Gsk.GLShader"
 status = "generate"
 generate_builder = true
@@ -133,27 +126,6 @@ generate_builder = true
     manual = true # TODO: fix me once (https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/3744) is merged
 
 [[object]]
-name = "Gsk.GLShaderNode"
-status = "generate"
-    [[object.function]]
-    name = "new"
-    manual = true
-
-[[object]]
-name = "Gsk.LinearGradientNode"
-status = "generate"
-    [[object.function]]
-    name = "new"
-    manual = true
-
-[[object]]
-name = "Gsk.RadialGradientNode"
-status = "generate"
-    [[object.function]]
-    name = "new"
-    manual = true
-
-[[object]]
 name = "Gsk.Renderer"
 status = "generate"
 trait_name = "GskRendererExt"
@@ -171,20 +143,6 @@ status = "generate" # fundemental type
         const = true
 
 [[object]]
-name = "Gsk.RepeatingLinearGradientNode"
-status = "generate"
-    [[object.function]]
-    name = "new"
-    manual = true
-
-[[object]]
-name = "Gsk.RepeatingRadialGradientNode"
-status = "generate"
-    [[object.function]]
-    name = "new"
-    manual = true
-
-[[object]]
 name = "Gsk.ShaderArgsBuilder"
 status = "generate"
     [[object.function]]
@@ -194,9 +152,6 @@ status = "generate"
 [[object]]
 name = "Gsk.ShadowNode"
 status = "generate"
-    [[object.function]]
-    name = "new"
-    manual = true # can't work due to &[&CopyType] issue
     [[object.function]]
     name = "get_shadow"
     manual = true # assert that i < n_shadows

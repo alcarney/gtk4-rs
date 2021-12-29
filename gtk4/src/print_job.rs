@@ -36,16 +36,4 @@ impl PrintJob {
             );
         }
     }
-
-    #[doc(alias = "gtk_print_job_set_page_ranges")]
-    pub fn set_page_ranges(&self, ranges: &[PageRange]) {
-        let n_ranges = ranges.len() as i32;
-        unsafe {
-            ffi::gtk_print_job_set_page_ranges(
-                self.to_glib_none().0,
-                mut_override(ranges.to_glib_full()),
-                n_ranges,
-            );
-        }
-    }
 }
